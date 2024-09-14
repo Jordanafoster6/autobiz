@@ -1,10 +1,3 @@
-import {
-  useQuery,
-  useMutation,
-  useQueryClient,
-  QueryClient,
-  QueryClientProvider,
-} from '@tanstack/react-query'
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
