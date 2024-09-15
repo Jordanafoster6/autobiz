@@ -1,19 +1,25 @@
 import React from 'react';
+import { Button } from '@mui/material';
+import { ChatWindow, ChatSidebar, ChatList, ChatFeed, PromptBar } from './gpt';
 
 export function Layout() {
     return (
-        <header className="App-header">
-            <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-            </p>
-            <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-            Learn React
-            </a>
-        </header>
+        <div className="container-fluid">
+          <div className='row'>
+              <ChatSidebar>
+                <div className='d-flex flex-column'>
+                  Custom Chat GPT
+                  <Button variant='contained'>+ New Chat</Button>
+                  <ChatList/>
+                </div>
+              </ChatSidebar>
+              <ChatWindow>
+                <div className='d-flex h-100' style={{flexDirection: 'column'}}>
+                  <ChatFeed/>
+                  <PromptBar onSubmitPrompt={(prompt) => {}}/>
+                </div>
+              </ChatWindow>
+          </div>
+        </div>
     )
 }
